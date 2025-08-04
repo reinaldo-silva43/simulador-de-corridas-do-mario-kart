@@ -75,8 +75,41 @@ async function logRollResult(characterName, block, diceResult, attribute) {
     console.log(`${characterName} 🎲 lançou um dado de ${block} ${diceResult} + ${attribute} = ${diceResult + attribute}`)
 }
 
+async function logPowerResult() {
+    console.log()
+}
+
+async function getRandomPower(character1, character2) {
+    let random = Math.random()
+    let power = ""
+    let points = 0
+    switch (true) {
+        case random > 0.7:
+            power = "BOMBA"
+            points = 2
+            break;
+        default:
+            power = "CASCO DE TARTARUGA"
+            points = 1
+            break;
+    }
+
+    console.log(`${character1.NOME} tirou na sorte e conseguiu um(a) ${power}!`)
+    console.log(`${character2.NOME} perdeu ${points} ponto(s)!`)
+
+    if(character2.PONTOS > 1 && points === 2)
+        character2.PONTOS - points
+    else(character2.PONTOS > 0 && points === 1)
+        character2.PONTOS - points
+
+    if(Math.random() > 0.8) {
+        console.log(`${character1.NOME} ganhou 1 ponto!`)
+        character1.PONTOS++
+    }
+}
+
 async function raceEngine(character1, character2) {
-    for(let round = 1; round <= 5; round++) {
+    for(let round = 1; round <= 7; round++) {
         console.log(`🏁 Rodada ${round}`)
 
         //sortear bloco
@@ -142,11 +175,13 @@ async function raceEngine(character1, character2) {
                 character2.PODER
             )
             if(powerResult1 > powerResult2 && character2.PONTOS > 0) {
-                console.log(`${character1.NOME} venceu o confronto! ${character2.NOME} perdeu 1 ponto`)
+                console.log(`${character1.NOME} venceu o confronto!`)
+                await getRandomPower(character1, character2)
                 character2.PONTOS--
             }
             if(powerResult2 > powerResult1 && character1.PONTOS > 0) {
-                console.log(`${character2.NOME} venceu o confronto! ${character1.NOME} perdeu 1 ponto`)
+                console.log(`${character2.NOME} venceu o confronto!`)
+                await getRandomPower(character2, character1)
                 character1.PONTOS--
             }
             
