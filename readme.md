@@ -1,18 +1,26 @@
 <h1>Desafio de projeto do Felipão: Mario Kart.JS</h1>
-
-  <table>
+<p>Este foi o primeio projeto que desenvolvi participando no bootcamp da DIO meutudo, que envolve a construção de um simulador de corridas do Mario Kart onde tudo o que acontece é mostrado em terminal, implementando as regras apresentadas pelo expert Felipe Aguiar além de mais outras duas regras adicionais como desafio.</p>
+<h2>🍄 Objetivo</h2>
+<table>
         <tr>
             <td>
                 <img src="./docs/header.gif" alt="Mario Kart" width="200">
             </td>
             <td>
-                <b>Objetivo:</b>
                 <p>Mario Kart é uma série de jogos de corrida desenvolvida e publicada pela Nintendo. Nosso desafio será criar uma lógica de um jogo de vídeo game para simular corridas de Mario Kart, levando em consideração as regras e mecânicas abaixo.</p>
             </td>
         </tr>
     </table>
 
-<h2>Players</h2>
+<p></p>
+<h2>💻 Tecnologias utilizadas</h2>
+<ul>
+<li>JavaScript</li>
+<li>Node JS</li>
+</ul>
+  
+
+<h2>🕹️ Players</h2>
       <table style="border-collapse: collapse; width: 800px; margin: 0 auto;">
         <tr>
             <td style="border: 1px solid black; text-align: center;">
@@ -76,7 +84,7 @@
 
 <p></p>
 
-<h3>🕹️ Regras & mecânicas:</h3>
+<h2>📜 Regras & mecânicas</h2>
 
 <b>Jogadores:</b>
 
@@ -98,6 +106,22 @@
 </ul>
 
 <b>Condição de vitória:</b>
-
+<ul>
+<li>
 <input type="checkbox" id="vitoria-item" />
 <label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
+</li>
+</ul>
+
+<b>Regras Adicionais:</b>
+<ul>
+<li>
+<input type="checkbox" id="vitoria-item" />
+<label for="vitoria-item">Ao entrar em confronto, é sorteado um casco de tartaruga ou uma bomba para o jogador que tirar o número maior ao lançar o dado, para lançar no oponente. O casco reduz 1 ponto do seu oponente, enquanto a bomba, 2. </label>
+</li>
+<li>
+<input type="checkbox" id="vitoria-item" />
+<label for="vitoria-item">O jogador que vencer o confronto, tem 30% de possibilidade de ganhar 1 ponto.</label>
+</li>
+</ul>
+
